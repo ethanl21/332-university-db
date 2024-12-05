@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="https://fav.farm/🐘" type="image/x-icon">
+	<title>University Database - Students</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css"
+		integrity="sha512-UXfikgakSZBii5lkvmDCRO+IYWQhTtwMOJ+3EmGEA+oA82kvbSskgw3OI16Jx1kINgF8aqOkYE+c9h4m6muONg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.3/htmx.min.js"
+		integrity="sha512-dQu3OKLMpRu85mW24LA1CUZG67BgLPR8Px3mcxmpdyijgl1UpCM1RtJoQP6h8UkufSnaHVRTUx98EQT9fcKohw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js"
+		integrity="sha512-BdRNuI8/lsyxkKQVxK1lVtfZshggfXPAwEP+JAOJEKx6Y8SLfcBSRdaWyXQmMxo+wG180uFqXYGjGRL0mh4/Jw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<div class="container-fluid">
+			<nav>
+				<ul>
+					<li>
+						<strong>CPSC 332 Term Project</strong>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/professors.html">Professors</a>
+					</li>
+					<li>
+						<a href="/students.html">Students</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<hr>
+	<main>
+		<div class="container">
+			<div class="two-col">
+				<article>
+					<header>
+						<h1>Course Sections</h1>
+					</header>
+					<form hx-get="query/student/sections.php" hx-target="#course-sections-replace" hx-swap="innerHTML">
+						<label for="student-course-no-input">
+							Course Number
+							<input type="text" name="student-course-no" id="student-course-no-input" required>
+						</label>
+						<input type="submit">
+					</form>
+					<footer>Students (a)</footer>
+				</article>
+
+				<div class="table-container">
+					<table class="striped">
+						<thead>
+							<th scope="col">Section</th>
+							<th scope="col">Classroom</th>
+							<th scope="col">Meeting</th>
+							<th scope="col">Enrolled</th>
+						</thead>
+						<tbody id="course-sections-replace">
+
+						</tbody>
+					</table>
+				</div>
+
+				<article>
+					<header>
+						<h1>Course History</h1>
+					</header>
+					<form hx-get="query/student/course-history.php" hx-target="#course-history-replace"
+						hx-swap="innerHTML">
+						<label for="student-cwid-input">
+							CWID
+							<input type="text" name="student-cwid" id="student-cwid-input" required>
+						</label>
+						<input type="submit">
+					</form>
+					<footer>Students (b)</footer>
+				</article>
+
+				<div class="table-container">
+					<table class="striped">
+						<thead>
+							<th scope="col">Course</th>
+							<th scope="col">Grade</th>
+						</thead>
+						<tbody id="course-history-replace">
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</main>
+	<hr />
+	<footer>
+		<div class="container" style="display: flex; flex-direction: column; align-items: center;">
+			<div>
+				🐘
+			</div>
+			<div>
+				CPSC 332 F24 - Ethan Lew, Harrison Thayer, Marc Villatoro
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		document.addEventListener("htmx:beforeSwap", (event) => {
+			const { detail } = event;
+
+			// Only sanitize innerHTML if swapping a full HTML string
+			if (detail.xhr && detail.xhr.responseText) {
+				// Sanitize the HTML using DOMPurify
+				const sanitizedHtml = DOMPurify.sanitize(detail.xhr.responseText);
+
+				// Update the response content with the sanitized HTML
+				detail.swapConfig.content = sanitizedHtml;
+			}
+		});
+	</script>
+</body>
+
+</html>

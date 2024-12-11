@@ -128,7 +128,7 @@
 				const sanitizedHtml = DOMPurify.sanitize(detail.xhr.responseText);
 
 				// Update the response content with the sanitized HTML
-				detail.swapConfig.content = sanitizedHtml;
+				detail.requestConfig.content = sanitizedHtml;
 			}
 		});
 	</script>

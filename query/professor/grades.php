@@ -1,48 +1,29 @@
-<tr>
-	<th scope="row">A</th>
-	<td>1</td>
-</tr>
-<tr>
-	<th scope="row">A-</th>
-	<td>2</td>
-</tr>
-<tr>
-	<th scope="row">B+</th>
-	<td>3</td>
-</tr>
-<tr>
-	<th scope="row">B</th>
-	<td>4</td>
-</tr>
-<tr>
-	<th scope="row">B-</th>
-	<td>5</td>
-</tr>
-<tr>
-	<th scope="row">C+</th>
-	<td>6</td>
-</tr>
-<tr>
-	<th scope="row">C</th>
-	<td>7</td>
-</tr>
-<tr>
-	<th scope="row">C-</th>
-	<td>8</td>
-</tr>
-<tr>
-	<th scope="row">D+</th>
-	<td>9</td>
-</tr>
-<tr>
-	<th scope="row">D</th>
-	<td>10</td>
-</tr>
-<tr>
-	<th scope="row">D-</th>
-	<td>11</td>
-</tr>
-<tr>
-	<th scope="row">F</th>
-	<td>12</td>
-</tr>
+<?php
+// Get the variables from the form's input(s)
+$course_no = $_GET["professor-course-no"];
+$section_no = $_GET["professor-section-no"];
+
+// query the db here (TODO)
+$grades = [ // debug data
+	["A+", 1],
+	["A", 2],
+	["A-", 3]
+];
+
+// generate the table rows
+$total_grades = 0;
+foreach ($grades as $grade) {
+	echo '<tr>';
+
+	// Grade letter label
+	echo '<th scope="row">';
+	echo $grade[0];
+	echo '</th>';
+
+	// Grade count
+	echo '<td>';
+	echo $grade[1];
+	echo '</td>';
+
+	echo '</tr>';
+}

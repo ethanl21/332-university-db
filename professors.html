@@ -73,7 +73,7 @@
 							</tr>
 						</thead>
 						<tbody id="class-list-replace">
-							
+
 						</tbody>
 					</table>
 				</div>
@@ -159,7 +159,7 @@
 						<tfoot>
 							<tr>
 								<th scope="row">Total</th>
-								<td></td>
+								<td id="total-grades"></td>
 							</tr>
 						</tfoot>
 					</table>
@@ -189,9 +189,22 @@
 				const sanitizedHtml = DOMPurify.sanitize(detail.xhr.responseText);
 
 				// Update the response content with the sanitized HTML
-				detail.swapConfig.content = sanitizedHtml;
+				detail.requestConfig.content = sanitizedHtml;
 			}
 		});
+
+		document.addEventListener("htmx:afterSwap", (event) => {
+			const { detail } = event;
+
+			const gradeCounts = Array.from(document.querySelectorAll("#grade-list-replace td"));
+
+			let totalGrades = 0;
+			for (const item of gradeCounts) {
+				totalGrades += Number.parseInt(item.textContent);
+			}
+
+			document.querySelector("#total-grades").textContent = totalGrades;
+		})
 	</script>
 </body>
 

@@ -15,6 +15,60 @@ CREATE TABLE
 		PRIMARY KEY (`SSN`)
 	);
 
+INSERT INTO
+	`Professor`
+VALUES
+	(
+		'123456789',
+		'Sample',
+		'Professor',
+		'123 Placeholder Street',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'999',
+		'0001111',
+		'MALE',
+		'Dean of Placeholder Studies',
+		'123456'
+	);
+
+INSERT INTO
+	`Professor`
+VALUES
+	(
+		'222222222',
+		'Sample',
+		'Professor 2',
+		'123 Placeholder Street',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'999',
+		'2222222',
+		'FEMALE',
+		'Professor of Computer Science',
+		'222222'
+	);
+
+INSERT INTO
+	`Professor`
+VALUES
+	(
+		'999999999',
+		'Tuffy',
+		'Titan',
+		'800 N State College Blvd',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'657',
+		'2782011',
+		'MALE',
+		'Computer Science Professor',
+		'999999'
+	);
+
 CREATE TABLE
 	`Department` (
 		`NUMBER` INT NOT NULL,
@@ -25,6 +79,30 @@ CREATE TABLE
 		`CHAIR_SSN` INT NOT NULL,
 		PRIMARY KEY (`NUMBER`),
 		FOREIGN KEY (`CHAIR_SSN`) REFERENCES `Professor` (`SSN`)
+	);
+
+INSERT INTO
+	`Department`
+VALUES
+	(
+		'0',
+		'Placeholder Studies',
+		'987',
+		'1112222',
+		'PLC 123',
+		'123456789'
+	);
+
+INSERT INTO
+	`Department`
+VALUES
+	(
+		'1',
+		'Computer Science',
+		'657',
+		'2782011',
+		'CS 123',
+		'999999999'
 	);
 
 CREATE TABLE
@@ -41,6 +119,132 @@ CREATE TABLE
 		FOREIGN KEY (`MAJOR_DEPT_NO`) REFERENCES `Department` (`NUMBER`)
 	);
 
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'111111111',
+		'Student',
+		'1',
+		'111 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'222222222',
+		'Student',
+		'2',
+		'222 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'333333333',
+		'Student',
+		'3',
+		'333 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'333333333',
+		'Student',
+		'3',
+		'333 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'444444444',
+		'Student',
+		'4',
+		'444 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'555555555',
+		'Student',
+		'5',
+		'555 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'666666666',
+		'Student',
+		'6',
+		'666 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'777777777',
+		'Student',
+		'7',
+		'777 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
+INSERT INTO
+	`Student`
+VALUES
+	(
+		'888888888',
+		'Student',
+		'8',
+		'888 Sample Dr',
+		'Fullerton',
+		'CALIFORNIA',
+		'92831',
+		'1'
+	);
+
 CREATE TABLE
 	`Course` (
 		`NUMBER` INT NOT NULL,
@@ -52,6 +256,50 @@ CREATE TABLE
 		FOREIGN KEY (`DEPT_NO`) REFERENCES `Department` (`NUMBER`)
 	);
 
+INSERT INTO
+	`Course`
+VALUES
+	(
+		'0',
+		'Intro to Computer Science',
+		'3',
+		'An introduction to computer science ',
+		'1'
+	);
+
+INSERT INTO
+	`Course`
+VALUES
+	(
+		'1',
+		'Data Structures',
+		'3',
+		'Data and Structures',
+		'1'
+	);
+
+INSERT INTO
+	`Course`
+VALUES
+	(
+		'2',
+		'Intro to Placeholder Studies',
+		'3',
+		'Placeholder practice vol x.',
+		'0'
+	);
+
+INSERT INTO
+	`Course`
+VALUES
+	(
+		'3',
+		'History of Placeholder Studies',
+		'3',
+		'Brief lesson in PLC',
+		'0'
+	);
+
 CREATE TABLE
 	`Prerequisite` (
 		`COURSE_NO` INT NOT NULL,
@@ -60,6 +308,11 @@ CREATE TABLE
 		FOREIGN KEY (`COURSE_NO`) REFERENCES Course (`NUMBER`),
 		FOREIGN KEY (`PREREQ_NO`) REFERENCES Course (`NUMBER`)
 	);
+
+INSERT INTO
+	`Prerequisite`
+VALUES
+	('1', '0');
 
 CREATE TABLE
 	`Section` (
@@ -77,6 +330,84 @@ CREATE TABLE
 
 ALTER TABLE `Section` ADD INDEX (`SECTION_NO`);
 
+INSERT INTO
+	`Section`
+VALUES
+	(
+		'1',
+		'1',
+		'CS 111',
+		'43',
+		'13:30:00',
+		'14:45:00',
+		'999999999'
+	);
+
+INSERT INTO
+	`Section`
+VALUES
+	(
+		'1',
+		'2',
+		'CS 222',
+		'21',
+		'13:30:00',
+		'14:45:00',
+		'222222222'
+	);
+
+INSERT INTO
+	`Section`
+VALUES
+	(
+		'0',
+		'1',
+		'CS 100',
+		'53',
+		'11:30:00',
+		'12:45:00',
+		'222222222'
+	);
+
+INSERT INTO
+	`Section`
+VALUES
+	(
+		'0',
+		'2',
+		'CS 100',
+		'53',
+		'13:30:00',
+		'14:45:00',
+		'222222222'
+	);
+
+INSERT INTO
+	`Section`
+VALUES
+	(
+		'3',
+		'1',
+		'PLC 1',
+		'32',
+		'10:00:00',
+		'11:30:00',
+		'123456789'
+	);
+
+INSERT INTO
+	`Section`
+VALUES
+	(
+		'3',
+		'2',
+		'PLC 1',
+		'32',
+		'12:30:00',
+		'13:45:00',
+		'123456789'
+	);
+
 CREATE TABLE
 	`Minor` (
 		`CWID` INT NOT NULL,
@@ -85,6 +416,11 @@ CREATE TABLE
 		FOREIGN KEY (`CWID`) REFERENCES `Student` (`CWID`),
 		FOREIGN KEY (`DEPT_NO`) REFERENCES `Department` (`NUMBER`)
 	);
+
+INSERT INTO
+	`Minor`
+VALUES
+	('123123123', '0');
 
 CREATE TABLE
 	`Enrollment` (
@@ -106,10 +442,22 @@ CREATE TABLE
 		FOREIGN KEY (`PROFESSOR_SSN`) REFERENCES `Professor` (`SSN`)
 	);
 
+INSERT INTO
+	`Degree`
+VALUES
+	('999999999', 'B.S. Computer Science');
+
+INSERT INTO
+	`Degree`
+VALUES
+	('222222222', 'B.A. Placeholder Studies');
+
 CREATE TABLE
 	`Meeting` (
+		`COURSE_NO` INT NOT NULL,
 		`SECTION_NO` INT NOT NULL,
 		`DAY` VARCHAR(25) NOT NULL,
 		PRIMARY KEY (`SECTION_NO`, `DAY`),
+		FOREIGN KEY (`COURSE_NO`) REFERENCES `Section` (`COURSE_NO`),
 		FOREIGN KEY (`SECTION_NO`) REFERENCES `Section` (`SECTION_NO`)
 	);

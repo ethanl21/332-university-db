@@ -24,9 +24,9 @@ while ($row = $result->fetch_assoc()) {
 
 	// generate the table rows
 	echo "<tr>
-			<td scope=\'row\' >" . $row["GRADE"] . "</td>
+			<th scope=\'row\' >" . $row["GRADE"] . "</th>
 			<td>" . $row["GRADE_COUNT"] . "</td>
-			</tr>";
+		</tr>";
 }
 
 $stmt->close();

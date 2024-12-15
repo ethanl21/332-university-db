@@ -31,11 +31,7 @@ VALUES
 		'MALE',
 		'Dean of Placeholder Studies',
 		'123456'
-	);
-
-INSERT INTO
-	`Professor`
-VALUES
+	),
 	(
 		'222222222',
 		'Sample',
@@ -49,11 +45,7 @@ VALUES
 		'FEMALE',
 		'Professor of Computer Science',
 		'222222'
-	);
-
-INSERT INTO
-	`Professor`
-VALUES
+	),
 	(
 		'999999999',
 		'Tuffy',
@@ -91,11 +83,7 @@ VALUES
 		'1112222',
 		'PLC 123',
 		'123456789'
-	);
-
-INSERT INTO
-	`Department`
-VALUES
+	),
 	(
 		'1',
 		'Computer Science',
@@ -131,11 +119,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'222222222',
 		'Student',
@@ -145,11 +129,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'333333333',
 		'Student',
@@ -159,11 +139,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'333333333',
 		'Student',
@@ -173,11 +149,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'444444444',
 		'Student',
@@ -187,11 +159,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'555555555',
 		'Student',
@@ -201,11 +169,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'666666666',
 		'Student',
@@ -215,11 +179,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'777777777',
 		'Student',
@@ -229,11 +189,7 @@ VALUES
 		'CALIFORNIA',
 		'92831',
 		'1'
-	);
-
-INSERT INTO
-	`Student`
-VALUES
+	),
 	(
 		'888888888',
 		'Student',
@@ -265,33 +221,21 @@ VALUES
 		'3',
 		'An introduction to computer science ',
 		'1'
-	);
-
-INSERT INTO
-	`Course`
-VALUES
+	),
 	(
 		'1',
 		'Data Structures',
 		'3',
 		'Data and Structures',
 		'1'
-	);
-
-INSERT INTO
-	`Course`
-VALUES
+	),
 	(
 		'2',
 		'Intro to Placeholder Studies',
 		'3',
 		'Placeholder practice vol x.',
 		'0'
-	);
-
-INSERT INTO
-	`Course`
-VALUES
+	),
 	(
 		'3',
 		'History of Placeholder Studies',
@@ -323,6 +267,7 @@ CREATE TABLE
 		`BEGIN_TIME` TIME NOT NULL,
 		`END_TIME` TIME NOT NULL,
 		`PROFESSOR_SSN` INT NOT NULL,
+		`DAYS` TEXT NOT NULL,
 		PRIMARY KEY (`COURSE_NO`, `SECTION_NO`),
 		FOREIGN KEY (`PROFESSOR_SSN`) REFERENCES `Professor` (`SSN`),
 		FOREIGN KEY (`COURSE_NO`) REFERENCES `Course` (`NUMBER`)
@@ -340,12 +285,9 @@ VALUES
 		'43',
 		'13:30:00',
 		'14:45:00',
-		'999999999'
-	);
-
-INSERT INTO
-	`Section`
-VALUES
+		'999999999',
+		'M/W'
+	),
 	(
 		'1',
 		'2',
@@ -353,12 +295,9 @@ VALUES
 		'21',
 		'13:30:00',
 		'14:45:00',
-		'222222222'
-	);
-
-INSERT INTO
-	`Section`
-VALUES
+		'222222222',
+		'T/Th'
+	),
 	(
 		'0',
 		'1',
@@ -366,12 +305,9 @@ VALUES
 		'53',
 		'11:30:00',
 		'12:45:00',
-		'222222222'
-	);
-
-INSERT INTO
-	`Section`
-VALUES
+		'222222222',
+		'M/W'
+	),
 	(
 		'0',
 		'2',
@@ -379,12 +315,9 @@ VALUES
 		'53',
 		'13:30:00',
 		'14:45:00',
-		'222222222'
-	);
-
-INSERT INTO
-	`Section`
-VALUES
+		'222222222',
+		'T/Th'
+	),
 	(
 		'3',
 		'1',
@@ -392,12 +325,9 @@ VALUES
 		'32',
 		'10:00:00',
 		'11:30:00',
-		'123456789'
-	);
-
-INSERT INTO
-	`Section`
-VALUES
+		'123456789',
+		'M/W'
+	),
 	(
 		'3',
 		'2',
@@ -405,7 +335,8 @@ VALUES
 		'32',
 		'12:30:00',
 		'13:45:00',
-		'123456789'
+		'123456789',
+		'T/TH'
 	);
 
 CREATE TABLE
@@ -445,19 +376,5 @@ CREATE TABLE
 INSERT INTO
 	`Degree`
 VALUES
-	('999999999', 'B.S. Computer Science');
-
-INSERT INTO
-	`Degree`
-VALUES
+	('999999999', 'B.S. Computer Science'),
 	('222222222', 'B.A. Placeholder Studies');
-
-CREATE TABLE
-	`Meeting` (
-		`COURSE_NO` INT NOT NULL,
-		`SECTION_NO` INT NOT NULL,
-		`DAY` VARCHAR(25) NOT NULL,
-		PRIMARY KEY (`SECTION_NO`, `DAY`),
-		FOREIGN KEY (`COURSE_NO`) REFERENCES `Section` (`COURSE_NO`),
-		FOREIGN KEY (`SECTION_NO`) REFERENCES `Section` (`SECTION_NO`)
-	);

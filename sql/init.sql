@@ -242,8 +242,14 @@ VALUES
 		'3',
 		'Brief lesson in PLC',
 		'0'
+	),
+	(
+		'4',
+		'Beginner Placeholder Practice Lab',
+		'1',
+		'N/A',
+		'0'
 	);
-
 CREATE TABLE
 	`Prerequisite` (
 		`COURSE_NO` INT NOT NULL,
@@ -256,8 +262,8 @@ CREATE TABLE
 INSERT INTO
 	`Prerequisite`
 VALUES
-	('1', '0');
-
+	('1', '0'),
+	('111111111', '3', '1', 'B')
 CREATE TABLE
 	`Section` (
 		`COURSE_NO` INT NOT NULL,
@@ -337,8 +343,17 @@ VALUES
 		'13:45:00',
 		'123456789',
 		'T/TH'
-	);
-
+	),
+	(
+		'4',
+		'1',
+		'PLC 200',
+		'21',
+		'10:00:00',
+		'11:30:00',
+		'123456789',
+		'M/W'
+	),
 CREATE TABLE
 	`Minor` (
 		`CWID` INT NOT NULL,
@@ -361,9 +376,33 @@ CREATE TABLE
 		`GRADE` VARCHAR(2) NOT NULL,
 		PRIMARY KEY (`CWID`, `COURSE_NO`, `SECTION_NO`),
 		FOREIGN KEY (`CWID`) REFERENCES `Student` (`CWID`),
-		FOREIGN KEY (`COURSE_NO`) REFERENCES `Section` (`COURSE_NO`),
+		FOREIGN KEY (`COURSE_NO`) REFERENCES `Course` (`NUMBER`),
 		FOREIGN KEY (`SECTION_NO`) REFERENCES `Section` (`SECTION_NO`)
 	);
+
+INSERT INTO
+	`Enrollment` (`CWID`, `COURSE_NO`, `SECTION_NO`, `GRADE`)
+VALUES
+	('111111111', '1', '1', 'B'),
+	('111111111', '3', '1', 'A'),
+	('222222222', '2', '1', 'C'),
+	('222222222', '1', '1', 'B'),
+	('222222222', '4', '1', 'B+'),
+	('333333333', '1', '2', 'A+'),
+	('333333333', '4', '1', 'B-'),
+	('333333333', '0', '2', 'B'),
+	('444444444', '0', '2', 'C+'),
+	('444444444', '4', '1', 'A+'),
+	('444444444', '3', '2', 'B-'),
+	('555555555', '1', '2', 'B-'),
+	('555555555', '4', '1', 'D+'),
+	('666666666', '2', '2', 'C-'),
+	('666666666', '1', '2', 'C'),
+	('777777777', '4', '1', 'A'),
+	('777777777', '2', '2', 'A+'),
+	('888888888', '1', '2', 'F'),
+	('888888888', '3', '2', 'C-'),
+	('888888888', '4', '1', 'A+')
 
 CREATE TABLE
 	`Degree` (

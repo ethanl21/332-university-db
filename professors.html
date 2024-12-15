@@ -18,7 +18,7 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 	<link rel="stylesheet" href="style.css">
-	<base href="https://ecs.fullerton.edu/~cs332g13/">
+	<!-- <base href="https://ecs.fullerton.edu/~cs332g13/"> TODO uncomment for school server --> 
 </head>
 
 <body>
@@ -196,14 +196,14 @@
 		document.addEventListener("htmx:afterSwap", (event) => {
 			const { detail } = event;
 
-			const gradeCounts = Array.from(document.querySelectorAll("#grade-list-replace td"));
+			const gradeCounts = Array.from(document.querySelectorAll("#grade-list-replace td:last-child"));
 
 			let totalGrades = 0;
 			for (const item of gradeCounts) {
 				totalGrades += Number.parseInt(item.textContent);
 			}
 
-			document.querySelector("#total-grades").textContent = totalGrades;
+			document.querySelector("#total-grades").textContent = totalGrades || "0";
 		})
 	</script>
 </body>

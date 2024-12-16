@@ -3,7 +3,7 @@
 $cwid = (int)$_GET["student-cwid"];
 
 // query the db
-$mysqli = new mysqli("mariadb", "root", "O3YMMVEnGpR8kg2Iosq85", "temp_db"); // todo: change for campus server
+$mysqli = new mysqli("mariadb", "cs332g13", "XoGmLVo0", "cs332g13");
 $stmt = $mysqli->prepare(
 	"
 SELECT `Student`.`CWID`, `Enrollment`.`COURSE_NO`, `Enrollment`.`GRADE`, `Course`.`TITLE`

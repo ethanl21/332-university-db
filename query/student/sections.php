@@ -3,7 +3,7 @@
 $course_no = (int)$_GET["student-course-no"];
 
 // query the db
-$mysqli = new mysqli("mariadb", "root", "O3YMMVEnGpR8kg2Iosq85", "temp_db"); // todo: change for campus server
+$mysqli = new mysqli("mariadb", "cs332g13", "XoGmLVo0", "cs332g13");
 $stmt = $mysqli->prepare(
 	"
 SELECT `Course`.`NUMBER`, `Section`.`SECTION_NO`, `Section`.`CLASSROOM`, `Section`.`DAYS`, `Section`.`BEGIN_TIME`, `Section`.`END_TIME`, `Enrollment`.`CWID`, COUNT(*) as `ENROLLED`

@@ -3,7 +3,7 @@
 $ssn = $_GET["professor-ssn"];
 
 // query the db
-$mysqli = new mysqli("mariadb", "root", "O3YMMVEnGpR8kg2Iosq85", "temp_db"); // todo: change for campus server
+$mysqli = new mysqli("mariadb", "cs332g13", "XoGmLVo0", "cs332g13");
 $stmt = $mysqli->prepare(
 	"
 	SELECT `Professor`.`SSN`, `Section`.`CLASSROOM`, `Course`.`TITLE`, `Section`.`DAYS`, `Section`.`BEGIN_TIME`, `Section`.`END_TIME`

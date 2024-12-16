@@ -141,16 +141,6 @@ VALUES
 		'1'
 	),
 	(
-		'333333333',
-		'Student',
-		'3',
-		'333 Sample Dr',
-		'Fullerton',
-		'CALIFORNIA',
-		'92831',
-		'1'
-	),
-	(
 		'444444444',
 		'Student',
 		'4',
@@ -263,7 +253,9 @@ INSERT INTO
 	`Prerequisite`
 VALUES
 	('1', '0'),
-	('111111111', '3', '1', 'B')
+	('111111111', '3', '1', 'B');
+
+
 CREATE TABLE
 	`Section` (
 		`COURSE_NO` INT NOT NULL,
@@ -353,7 +345,8 @@ VALUES
 		'11:30:00',
 		'123456789',
 		'M/W'
-	),
+	);
+
 CREATE TABLE
 	`Minor` (
 		`CWID` INT NOT NULL,
@@ -402,7 +395,7 @@ VALUES
 	('777777777', '2', '2', 'A+'),
 	('888888888', '1', '2', 'F'),
 	('888888888', '3', '2', 'C-'),
-	('888888888', '4', '1', 'A+')
+	('888888888', '4', '1', 'A+');
 
 CREATE TABLE
 	`Degree` (

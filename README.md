@@ -11,6 +11,56 @@
 3. Add your FTP credentials to your GitHub repository secrets (`FTP_HOST`, `FTP_USERNAME`, `FTP_PASSWORD`)
 4. Modify `deploy.yml` if necessary to deploy to your web host of choice.
 
+### Default Inputs
+
+Use the following inputs to query the database. All data contained in the database is for demonstration purposes only.
+
+#### Professors
+
+##### Class List
+
+| Social Security Number |
+| ---------------------- |
+| 123456789              |
+| 222222222              |
+| 999999999              |
+
+##### Grades
+
+| Course Number | Section Number |
+| ------------- | -------------- |
+| 0             | 1              |
+| 0             | 2              |
+| 1             | 1              |
+| 1             | 2              |
+| 3             | 1              |
+| 3             | 2              |
+| 4             | 1              |
+
+#### Students
+
+##### Course Sections
+
+| Course Number |
+| ------------- |
+| 0             |
+| 1             |
+| 3             |
+| 4             |
+
+##### Course History
+
+| CWID      |
+| --------- |
+| 111111111 |
+| 222222222 |
+| 333333333 |
+| 444444444 |
+| 555555555 |
+| 666666666 |
+| 777777777 |
+| 888888888 |
+
 ## Attribution
 
 The following open-source libraries are uses:

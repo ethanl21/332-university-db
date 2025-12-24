@@ -17,8 +17,7 @@
 		integrity="sha512-BdRNuI8/lsyxkKQVxK1lVtfZshggfXPAwEP+JAOJEKx6Y8SLfcBSRdaWyXQmMxo+wG180uFqXYGjGRL0mh4/Jw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-	<link rel="stylesheet" href="style.css">
-	<base href="https://ecs.fullerton.edu/~cs332g13/">
+	<link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -32,13 +31,13 @@
 				</ul>
 				<ul>
 					<li>
-						<a href="">Home</a>
+						<a href="/">Home</a>
 					</li>
 					<li>
-						<a href="professors.html">Professors</a>
+						<a href="/professors">Professors</a>
 					</li>
 					<li>
-						<a href="students.html">Students</a>
+						<a href="/students">Students</a>
 					</li>
 				</ul>
 			</nav>
@@ -52,7 +51,7 @@
 					<header>
 						<h1>Course Sections</h1>
 					</header>
-					<form hx-get="query/student/sections.php" hx-target="#course-sections-replace" hx-swap="innerHTML">
+					<form hx-get="/php/student/sections.php" hx-target="#course-sections-replace" hx-swap="innerHTML">
 						<label for="student-course-no-input">
 							Course Number
 							<input type="text" name="student-course-no" id="student-course-no-input" required>
@@ -80,7 +79,7 @@
 					<header>
 						<h1>Course History</h1>
 					</header>
-					<form hx-get="query/student/course-history.php" hx-target="#course-history-replace"
+					<form hx-get="/php/student/course-history.php" hx-target="#course-history-replace"
 						hx-swap="innerHTML">
 						<label for="student-cwid-input">
 							CWID
@@ -101,6 +100,20 @@
 
 						</tbody>
 					</table>
+				</div>
+
+				<article>
+					<header>
+						<h1>Test</h1>
+					</header>
+					<form hx-get="/php/test/test.php" hx-target="#test-replace" hx-swap="innerHTML">
+						<input type="submit">
+					</form>
+					<footer>Students (test)</footer>
+				</article>
+				
+				<div class="table-container">
+					<p id="test-replace"></p>
 				</div>
 
 			</div>

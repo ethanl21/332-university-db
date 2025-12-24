@@ -3,7 +3,13 @@
 $cwid = (int)$_GET["student-cwid"];
 
 // query the db
-$mysqli = new mysqli("mariadb", "cs332g13", "XoGmLVo0", "cs332g13");
+$config = require __DIR__ . '/../config/db.php';
+$mysqli = new mysqli(
+	$config['host'],
+    $config['user'],
+    $config['pass'],
+    $config['name']);
+
 $stmt = $mysqli->prepare(
 	"
 SELECT `Student`.`CWID`, `Enrollment`.`COURSE_NO`, `Enrollment`.`GRADE`, `Course`.`TITLE`
@@ -19,9 +25,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 while ($row = $result->fetch_assoc()) {
-	$start_time = new DateTime($row["BEGIN_TIME"]);
-	$end_time = new DateTime($row["END_TIME"]);
-
 	// generate the table rows
 	echo "<tr>
 			<th scope=\"row\">" . $row["TITLE"] . "</th>

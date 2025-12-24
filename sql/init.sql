@@ -240,6 +240,7 @@ VALUES
 		'N/A',
 		'0'
 	);
+
 CREATE TABLE
 	`Prerequisite` (
 		`COURSE_NO` INT NOT NULL,
@@ -252,9 +253,7 @@ CREATE TABLE
 INSERT INTO
 	`Prerequisite`
 VALUES
-	('1', '0'),
-	('111111111', '3', '1', 'B');
-
+	('1', '0');
 
 CREATE TABLE
 	`Section` (

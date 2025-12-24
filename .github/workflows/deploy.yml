@@ -1,0 +1,25 @@
+name: Deploy to InfinityFree via FTP
+
+on:
+  push:
+    branches:
+      - main  # trigger on pushes to main branch
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21  # default FTP port
+        local-dir: ./www # folder in your repo to upload
+        server-dir: /htdocs  # remote directory on the FTP server
+        delete: true  # clears the remote folder before uploading

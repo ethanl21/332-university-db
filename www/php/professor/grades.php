@@ -3,7 +3,14 @@
 $course_no = (int)$_GET["professor-course-no"];
 $section_no = (int)$_GET["professor-section-no"];
 
-$mysqli = new mysqli("mariadb", "cs332g13", "XoGmLVo0", "cs332g13");
+// query the db
+$config = require __DIR__ . '/../config/db.php';
+$mysqli = new mysqli(
+	$config['host'],
+    $config['user'],
+    $config['pass'],
+    $config['name']);
+
 $stmt = $mysqli->prepare(
 	"
 SELECT `Course`.`NUMBER`, `Section`.`SECTION_NO`, `Enrollment`.`GRADE`, COUNT(*) as `GRADE_COUNT`

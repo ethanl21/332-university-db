@@ -3,7 +3,13 @@
 $ssn = $_GET["professor-ssn"];
 
 // query the db
-$mysqli = new mysqli("mariadb", "cs332g13", "XoGmLVo0", "cs332g13");
+$config = require __DIR__ . '/../config/db.php';
+$mysqli = new mysqli(
+	$config['host'],
+    $config['user'],
+    $config['pass'],
+    $config['name']);
+
 $stmt = $mysqli->prepare(
 	"
 	SELECT `Professor`.`SSN`, `Section`.`CLASSROOM`, `Course`.`TITLE`, `Section`.`DAYS`, `Section`.`BEGIN_TIME`, `Section`.`END_TIME`

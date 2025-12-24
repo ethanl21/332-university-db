@@ -4,7 +4,24 @@
 
 ## Usage
 
+`332-university-db` can be deployed to any web host that supports static HTML/CSS/JS, PHP, and MySQL.
 
+1. Create a MySQL database and use the included SQL queries in `sql/init.sql` to initialize the databse
+2. Create a file `www/php/config/db.php` with your database credentials:
+
+```php
+<?php
+
+return [
+    'host' => '',
+    'user' => '',
+    'pass' => '',
+    'name' => '',
+];
+```
+
+3. Add your FTP credentials to your GitHub repository secrets (`FTP_HOST`, `FTP_USERNAME`, `FTP_PASSWORD`)
+4. Modify `deploy.yml` if necessary to deploy to your web host of choice.
 
 ## Attribution
 

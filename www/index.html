@@ -1,124 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://fav.farm/🐘" type="image/x-icon">
-    <title>University Database</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://fav.farm/🐘" type="image/x-icon" />
+  <title>University Database</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css"
-        integrity="sha512-UXfikgakSZBii5lkvmDCRO+IYWQhTtwMOJ+3EmGEA+oA82kvbSskgw3OI16Jx1kINgF8aqOkYE+c9h4m6muONg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.3/htmx.min.js"
-        integrity="sha512-dQu3OKLMpRu85mW24LA1CUZG67BgLPR8Px3mcxmpdyijgl1UpCM1RtJoQP6h8UkufSnaHVRTUx98EQT9fcKohw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js"
-        integrity="sha512-BdRNuI8/lsyxkKQVxK1lVtfZshggfXPAwEP+JAOJEKx6Y8SLfcBSRdaWyXQmMxo+wG180uFqXYGjGRL0mh4/Jw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css"
+    integrity="sha512-UXfikgakSZBii5lkvmDCRO+IYWQhTtwMOJ+3EmGEA+oA82kvbSskgw3OI16Jx1kINgF8aqOkYE+c9h4m6muONg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.3/htmx.min.js"
+    integrity="sha512-dQu3OKLMpRu85mW24LA1CUZG67BgLPR8Px3mcxmpdyijgl1UpCM1RtJoQP6h8UkufSnaHVRTUx98EQT9fcKohw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js"
+    integrity="sha512-BdRNuI8/lsyxkKQVxK1lVtfZshggfXPAwEP+JAOJEKx6Y8SLfcBSRdaWyXQmMxo+wG180uFqXYGjGRL0mh4/Jw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-
-    <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-    <header>
-        <div class="container-fluid">
-            <nav>
-                <ul>
-                    <li>
-                        <strong>CPSC 332 Term Project</strong>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/professors">Professors</a>
-                    </li>
-                    <li>
-                        <a href="/students">Students</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <hr>
-    <main>
-        <div class="container two-col">
-            <article class="card" style="width: fit-content;">
-                <header>
-                    <hgroup>
-                        <h2>CPSC 332 Term Project</h2>
-                        <p>University Database</p>
-                    </hgroup>
-                </header>
+  <header>
+    <div class="container-fluid">
+      <nav>
+        <ul>
+          <li>
+            <strong>CPSC 332 Term Project</strong>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/professors">Professors</a>
+          </li>
+          <li>
+            <a href="/students">Students</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <hr />
+  <main>
+    <div class="container two-col">
+      <article class="card" style="width: fit-content">
+        <header>
+          <hgroup>
+            <h2>CPSC 332 Term Project</h2>
+            <p>University Database</p>
+          </hgroup>
+        </header>
 
-                <h3>Team</h3>
-                <ul>
-                    <li>Ethan Lew</li>
-                    <li>Harrison Thayer</li>
-                    <li>Marck Villatoro</li>
-                </ul>
-            </article>
+        <h3>Team</h3>
+        <ul>
+          <li>Ethan Lew</li>
+          <li>Harrison Thayer</li>
+          <li>Marck Villatoro</li>
+        </ul>
+      </article>
 
-            <div>
-                <h2>Directory</h2>
-                <ul>
-                    <li><a href="/professors">Professor Queries 🔗</a></li>
+      <div>
+        <h2>Directory</h2>
+        <ul>
+          <li><a href="/professors">Professor Queries 🔗</a></li>
 
-                    <li><a href="/students">Student Queries 🔗</a></li>
-                </ul>
-            </div>
-        </div>
+          <li><a href="/students">Student Queries 🔗</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <hr />
+  <footer>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center">
+      <div id="tuffy">🐘</div>
+      <div>CPSC 332 F24 - Ethan Lew, Harrison Thayer, Marck Villatoro</div>
+    </div>
+  </footer>
 
-    </main>
-    <hr />
-    <footer>
-        <div class="container" style="display: flex; flex-direction: column; align-items: center;">
-            <div id="tuffy">
-                🐘
-            </div>
-            <div>
-                CPSC 332 F24 - Ethan Lew, Harrison Thayer, Marck Villatoro
-            </div>
-        </div>
-    </footer>
+  <script>
+    function getElementCenterPosition(selector) {
+      const element = document.querySelector(selector);
+      if (!element) return null;
 
-    <script>
-        function getElementCenterPosition(selector) {
-            const element = document.querySelector(selector);
-            if (!element) return null;
+      const rect = element.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
 
-            const rect = element.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
+      // Normalizing position relative to viewport
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
 
-            // Normalizing position relative to viewport
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
+      return {
+        x: centerX / viewportWidth,
+        y: centerY / viewportHeight,
+      };
+    }
 
-            return {
-                x: centerX / viewportWidth,
-                y: centerY / viewportHeight
-            };
-        }
+    const tuffy = document.getElementById("tuffy");
 
-        const tuffy = document.getElementById("tuffy");
+    tuffy.addEventListener("click", () => {
+      pos = getElementCenterPosition("#tuffy");
 
-        tuffy.addEventListener('click', () => {
-            pos = getElementCenterPosition("#tuffy");
-
-            confetti({
-                origin: {
-                    x: pos.x,
-                    y: pos.y
-                }
-            })
-        })
-    </script>
+      confetti({
+        origin: {
+          x: pos.x,
+          y: pos.y,
+        },
+      });
+    });
+  </script>
 </body>
 
 </html>

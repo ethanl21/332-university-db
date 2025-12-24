@@ -1,210 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="https://fav.farm/🐘" type="image/x-icon">
-	<title>University Database - Professors</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://fav.farm/🐘" type="image/x-icon" />
+  <title>University Database - Professors</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css"
-		integrity="sha512-UXfikgakSZBii5lkvmDCRO+IYWQhTtwMOJ+3EmGEA+oA82kvbSskgw3OI16Jx1kINgF8aqOkYE+c9h4m6muONg=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.3/htmx.min.js"
-		integrity="sha512-dQu3OKLMpRu85mW24LA1CUZG67BgLPR8Px3mcxmpdyijgl1UpCM1RtJoQP6h8UkufSnaHVRTUx98EQT9fcKohw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js"
-		integrity="sha512-BdRNuI8/lsyxkKQVxK1lVtfZshggfXPAwEP+JAOJEKx6Y8SLfcBSRdaWyXQmMxo+wG180uFqXYGjGRL0mh4/Jw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css"
+    integrity="sha512-UXfikgakSZBii5lkvmDCRO+IYWQhTtwMOJ+3EmGEA+oA82kvbSskgw3OI16Jx1kINgF8aqOkYE+c9h4m6muONg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.3/htmx.min.js"
+    integrity="sha512-dQu3OKLMpRu85mW24LA1CUZG67BgLPR8Px3mcxmpdyijgl1UpCM1RtJoQP6h8UkufSnaHVRTUx98EQT9fcKohw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js"
+    integrity="sha512-BdRNuI8/lsyxkKQVxK1lVtfZshggfXPAwEP+JAOJEKx6Y8SLfcBSRdaWyXQmMxo+wG180uFqXYGjGRL0mh4/Jw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-	<link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-	<header>
-		<div class="container-fluid">
-			<nav>
-				<ul>
-					<li>
-						<strong>CPSC 332 Term Project</strong>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/professors">Professors</a>
-					</li>
-					<li>
-						<a href="/students">Students</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<hr>
-	<main>
-		<div class="container">
-			<div class="two-col">
-				<article>
-					<header>
-						<h1>Class List</h1>
-					</header>
-					<form hx-get="/php/professor/class-list.php" hx-target="#class-list-replace" hx-swap="innerHTML">
-						<label for="professor-ssn-input">
-							Social Security Number
-							<input type="password" name="professor-ssn" id="professor-ssn-input" required>
-						</label>
-						<input type="submit">
-					</form>
-					<footer>
-						Professors (a)
-					</footer>
-				</article>
-				<div class="table-container">
-					<table class="striped">
-						<thead>
-							<tr>
-								<th scope="col">Title</th>
-								<th scope="col">Classroom</th>
-								<th scope="col">Meeting</th>
-							</tr>
-						</thead>
-						<tbody id="class-list-replace">
+  <header>
+    <div class="container-fluid">
+      <nav>
+        <ul>
+          <li>
+            <strong>CPSC 332 Term Project</strong>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/professors">Professors</a>
+          </li>
+          <li>
+            <a href="/students">Students</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <hr />
+  <main>
+    <div class="container">
+      <div class="two-col">
+        <article>
+          <header>
+            <h1>Class List</h1>
+          </header>
+          <form hx-get="/php/professor/class-list.php" hx-target="#class-list-replace" hx-swap="innerHTML">
+            <label for="professor-ssn-input">
+              Social Security Number
+              <input type="password" name="professor-ssn" id="professor-ssn-input" required />
+            </label>
+            <input type="submit" />
+          </form>
+          <footer>Professors (a)</footer>
+        </article>
+        <div class="table-container">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Classroom</th>
+                <th scope="col">Meeting</th>
+              </tr>
+            </thead>
+            <tbody id="class-list-replace"></tbody>
+          </table>
+        </div>
 
-						</tbody>
-					</table>
-				</div>
+        <article>
+          <header>
+            <h1>Grades</h1>
+          </header>
+          <form hx-get="/php/professor/grades.php" hx-target="#grade-list-replace" hx-swap="innerHTML">
+            <label for="professor-course-no-input">
+              Course Number
+              <input type="text" name="professor-course-no" id="professor-course-no-input" required />
+            </label>
+            <label for="professor-section-no-input">
+              Section Number
+              <input type="text" name="professor-section-no" id="professor-section-no-input" required />
+            </label>
+            <input type="submit" />
+          </form>
+          <footer>Professors (b)</footer>
+        </article>
 
-				<article>
-					<header>
-						<h1>Grades</h1>
-					</header>
-					<form hx-get="/php/professor/grades.php" hx-target="#grade-list-replace" hx-swap="innerHTML">
-						<label for="professor-course-no-input">
-							Course Number
-							<input type="text" name="professor-course-no" id="professor-course-no-input" required>
-						</label>
-						<label for="professor-section-no-input">
-							Section Number
-							<input type="text" name="professor-section-no" id="professor-section-no-input" required>
-						</label>
-						<input type="submit">
-					</form>
-					<footer>
-						Professors (b)
-					</footer>
-				</article>
+        <div class="table-container">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th scope="col">Grade</th>
+                <th scope="col">Count</th>
+              </tr>
+            </thead>
+            <tbody id="grade-list-replace">
+              <tr>
+                <th scope="row">A</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">A-</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">B+</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">B</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">B-</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">C+</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">C</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">C-</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">D+</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">D</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">D-</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">F</th>
+                <td></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Total</th>
+                <td id="total-grades"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+  <hr />
+  <footer>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center">
+      <div>🐘</div>
+      <div>CPSC 332 F24 - Ethan Lew, Harrison Thayer, Marck Villatoro</div>
+    </div>
+  </footer>
 
-				<div class="table-container">
-					<table class="striped">
-						<thead>
-							<tr>
-								<th scope="col">Grade</th>
-								<th scope="col">Count</th>
-							</tr>
-						</thead>
-						<tbody id="grade-list-replace">
-							<tr>
-								<th scope="row">A</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">A-</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">B+</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">B</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">B-</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">C+</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">C</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">C-</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">D+</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">D</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">D-</th>
-								<td></td>
-							</tr>
-							<tr>
-								<th scope="row">F</th>
-								<td></td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<th scope="row">Total</th>
-								<td id="total-grades"></td>
-							</tr>
-						</tfoot>
-					</table>
-				</div>
-			</div>
-		</div>
-	</main>
-	<hr />
-	<footer>
-		<div class="container" style="display: flex; flex-direction: column; align-items: center;">
-			<div>
-				🐘
-			</div>
-			<div>
-				CPSC 332 F24 - Ethan Lew, Harrison Thayer, Marck Villatoro
-			</div>
-		</div>
-	</footer>
+  <script>
+    document.addEventListener("htmx:beforeSwap", (event) => {
+      const { detail } = event;
 
-	<script>
-		document.addEventListener("htmx:beforeSwap", (event) => {
-			const { detail } = event;
+      // Only sanitize innerHTML if swapping a full HTML string
+      if (detail.xhr && detail.xhr.responseText) {
+        // Sanitize the HTML using DOMPurify
+        const sanitizedHtml = DOMPurify.sanitize(detail.xhr.responseText);
 
-			// Only sanitize innerHTML if swapping a full HTML string
-			if (detail.xhr && detail.xhr.responseText) {
-				// Sanitize the HTML using DOMPurify
-				const sanitizedHtml = DOMPurify.sanitize(detail.xhr.responseText);
+        // Update the response content with the sanitized HTML
+        detail.requestConfig.content = sanitizedHtml;
+      }
+    });
 
-				// Update the response content with the sanitized HTML
-				detail.requestConfig.content = sanitizedHtml;
-			}
-		});
+    document.addEventListener("htmx:afterSwap", (event) => {
+      const { detail } = event;
 
-		document.addEventListener("htmx:afterSwap", (event) => {
-			const { detail } = event;
+      const gradeCounts = Array.from(
+        document.querySelectorAll("#grade-list-replace td:last-child"),
+      );
 
-			const gradeCounts = Array.from(document.querySelectorAll("#grade-list-replace td:last-child"));
+      let totalGrades = 0;
+      for (const item of gradeCounts) {
+        totalGrades += Number.parseInt(item.textContent);
+      }
 
-			let totalGrades = 0;
-			for (const item of gradeCounts) {
-				totalGrades += Number.parseInt(item.textContent);
-			}
-
-			document.querySelector("#total-grades").textContent = totalGrades || "0";
-		})
-	</script>
+      document.querySelector("#total-grades").textContent =
+        totalGrades || "0";
+    });
+  </script>
 </body>
 
 </html>

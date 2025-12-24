@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="https://fav.farm/🐘" type="image/x-icon">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="https://fav.farm/🐘" type="image/x-icon" />
 	<title>University Database - Students</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css"
@@ -17,7 +17,7 @@
 		integrity="sha512-BdRNuI8/lsyxkKQVxK1lVtfZshggfXPAwEP+JAOJEKx6Y8SLfcBSRdaWyXQmMxo+wG180uFqXYGjGRL0mh4/Jw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -43,7 +43,7 @@
 			</nav>
 		</div>
 	</header>
-	<hr>
+	<hr />
 	<main>
 		<div class="container">
 			<div class="two-col">
@@ -54,9 +54,9 @@
 					<form hx-get="/php/student/sections.php" hx-target="#course-sections-replace" hx-swap="innerHTML">
 						<label for="student-course-no-input">
 							Course Number
-							<input type="text" name="student-course-no" id="student-course-no-input" required>
+							<input type="text" name="student-course-no" id="student-course-no-input" required />
 						</label>
-						<input type="submit">
+						<input type="submit" />
 					</form>
 					<footer>Students (a)</footer>
 				</article>
@@ -69,9 +69,7 @@
 							<th scope="col">Meeting</th>
 							<th scope="col">Enrolled</th>
 						</thead>
-						<tbody id="course-sections-replace">
-
-						</tbody>
+						<tbody id="course-sections-replace"></tbody>
 					</table>
 				</div>
 
@@ -83,9 +81,9 @@
 						hx-swap="innerHTML">
 						<label for="student-cwid-input">
 							CWID
-							<input type="text" name="student-cwid" id="student-cwid-input" required>
+							<input type="text" name="student-cwid" id="student-cwid-input" required />
 						</label>
-						<input type="submit">
+						<input type="submit" />
 					</form>
 					<footer>Students (b)</footer>
 				</article>
@@ -96,38 +94,17 @@
 							<th scope="col">Course</th>
 							<th scope="col">Grade</th>
 						</thead>
-						<tbody id="course-history-replace">
-
-						</tbody>
+						<tbody id="course-history-replace"></tbody>
 					</table>
 				</div>
-
-				<article>
-					<header>
-						<h1>Test</h1>
-					</header>
-					<form hx-get="/php/test/test.php" hx-target="#test-replace" hx-swap="innerHTML">
-						<input type="submit">
-					</form>
-					<footer>Students (test)</footer>
-				</article>
-				
-				<div class="table-container">
-					<p id="test-replace"></p>
-				</div>
-
 			</div>
 		</div>
 	</main>
 	<hr />
 	<footer>
-		<div class="container" style="display: flex; flex-direction: column; align-items: center;">
-			<div>
-				🐘
-			</div>
-			<div>
-				CPSC 332 F24 - Ethan Lew, Harrison Thayer, Marck Villatoro
-			</div>
+		<div class="container" style="display: flex; flex-direction: column; align-items: center">
+			<div>🐘</div>
+			<div>CPSC 332 F24 - Ethan Lew, Harrison Thayer, Marck Villatoro</div>
 		</div>
 	</footer>
 
